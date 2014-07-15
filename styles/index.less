@@ -1,0 +1,104 @@
+html, body {
+	height: 100%;
+}
+
+main {
+	height: 100%;
+
+	> section {
+		height: 100%;
+		position: relative;
+
+		> figure {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			margin: 0;
+			.transform-style(preserve-3d);
+			z-index: 10;
+			visibility: hidden;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 2;
+			}
+
+			> .content-fill {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1;
+			}
+
+			> figcaption {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				width: 60%;
+				max-width: 600px;
+				z-index: 10;
+				text-align: center;
+				.transform(translateY(-50%));
+			}
+		}
+
+		> div {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			background-color: #fff;
+			z-index: 20;
+			.transform-style(preserve-3d);
+
+			> .sqs-layout {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				width: 80%;
+				max-width: 600px;
+				margin: 0 auto;
+				.transform(translateY(-50%));
+			}
+		}
+
+		&:nth-child(odd) {
+
+			> figure {
+				left: 50%;
+				right: 0;
+			}
+
+			> div {
+				left: 0;
+				right: 50%;
+			}
+		}
+
+		&:nth-child(even) {
+
+			> figure {
+				left: 0;
+				right: 50%;
+			}
+
+			> div {
+				left: 50%;
+				right: 0;
+			}
+		}
+
+		&.current > figure {
+			visibility: visible;
+		}
+	}
+}

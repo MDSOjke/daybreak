@@ -1,0 +1,124 @@
+.section (@index) {
+
+	main > section:nth-child(@index) > figure {
+		@foreground-color: "section-@{index}-foreground-color";
+		color: @@foreground-color;
+
+		&::before {
+			@overlay-color: "section-@{index}-overlay-color";
+			background-color: @@overlay-color;
+		}
+	}
+}
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 1", "target": "main > section:nth-child(1) > figure" }
+@section-1-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 1", "target": "main > section:nth-child(1) > figure" }
+@section-1-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 1 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 1", "target": "main > section:nth-child(1) > figure" }
+
+.section(1);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 2", "target": "main > section:nth-child(2) > figure" }
+@section-2-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 2", "target": "main > section:nth-child(2) > figure" }
+@section-2-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 2 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 2", "target": "main > section:nth-child(2) > figure" }
+
+.section(2);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 3", "target": "main > section:nth-child(3) > figure" }
+@section-3-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 3", "target": "main > section:nth-child(3) > figure" }
+@section-3-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 3 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 3", "target": "main > section:nth-child(3) > figure" }
+
+.section(3);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 4", "target": "main > section:nth-child(4) > figure" }
+@section-4-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 4", "target": "main > section:nth-child(4) > figure" }
+@section-4-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 4 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 4", "target": "main > section:nth-child(4) > figure" }
+
+.section(4);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 5", "target": "main > section:nth-child(5) > figure" }
+@section-5-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 5", "target": "main > section:nth-child(5) > figure" }
+@section-5-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 5 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 5", "target": "main > section:nth-child(5) > figure" }
+
+.section(5);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 6", "target": "main > section:nth-child(6) > figure" }
+@section-6-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 6", "target": "main > section:nth-child(6) > figure" }
+@section-6-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 6 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 6", "target": "main > section:nth-child(6) > figure" }
+
+.section(6);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 7", "target": "main > section:nth-child(7) > figure" }
+@section-7-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 7", "target": "main > section:nth-child(7) > figure" }
+@section-7-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 7 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 7", "target": "main > section:nth-child(7) > figure" }
+
+.section(7);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 8", "target": "main > section:nth-child(8) > figure" }
+@section-8-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 8", "target": "main > section:nth-child(8) > figure" }
+@section-8-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 8 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 8", "target": "main > section:nth-child(8) > figure" }
+
+.section(8);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 9", "target": "main > section:nth-child(9) > figure" }
+@section-9-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 9", "target": "main > section:nth-child(9) > figure" }
+@section-9-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 9 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 9", "target": "main > section:nth-child(9) > figure" }
+
+.section(9);
+
+
+// tweak: { "type": "color", "title": "Foreground Color", "category": "Section 10", "target": "main > section:nth-child(10) > figure" }
+@section-10-foreground-color: #fff;
+
+// tweak: { "type": "color", "title": "Overlay Color", "category": "Section 10", "target": "main > section:nth-child(10) > figure" }
+@section-10-overlay-color: rgba(68, 68, 68, .5);
+
+// tweak: { "type": "dropdown", "title": "Section 10 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 10", "target": "main > section:nth-child(10) > figure" }
+
+.section(10);
+
+

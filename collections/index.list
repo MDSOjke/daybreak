@@ -1,0 +1,32 @@
+<main>
+
+	{.repeated section collection.collections}
+
+		<section>
+
+			<figure>
+
+				{.section mainImage}
+					<div class="content-fill">
+						<img {@|image-meta}>
+					</div>
+				{.end}
+
+				<figcaption>
+					<h1>{title}</h1>
+					<squarespace:block-field id="figcaption-{id}" columns="12">
+				</figcaption>
+
+			</figure>
+
+			<div>
+
+				{mainContent}
+
+			</div>
+
+		</section>
+
+	{.end}
+
+</main>
