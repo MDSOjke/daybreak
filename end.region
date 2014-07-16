@@ -1,5 +1,6 @@
 
 		<squarespace:script src="main.js" combo="true">
+		<squarespace:script src="scrolling.js" combo="true">
 
 		{squarespace-footers}
 
