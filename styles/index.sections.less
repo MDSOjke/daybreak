@@ -2,7 +2,10 @@
 
 	main > section:nth-child(@index) > figure {
 		@foreground-color: "section-@{index}-foreground-color";
-		color: @@foreground-color;
+
+		&, h1, p, strong {
+			color: @@foreground-color;
+		}
 
 		&::before {
 			@overlay-color: "section-@{index}-overlay-color";

@@ -47,5 +47,6 @@ var updateSections = function (force) {
 };
 
 Y.one(window).on("scroll", updateSections);
+Y.on("resize", updateSections);
 updateSections(true);
 

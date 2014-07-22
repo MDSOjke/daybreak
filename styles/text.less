@@ -1,0 +1,37 @@
+// tweak: { "type": "font", "title": "Paragraph Font", "target": "p" }
+.paragraph-font {
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0px;
+	font-size: 18px;
+	line-height: 26px;
+}
+
+// tweak: { "type": "color", "title": "Paragraph Text Color", "target": "p" }
+@paragraph-text-color: #444;
+
+p {
+	.paragraph-font;
+	color: @paragraph-text-color;
+	margin: .8em 0;
+}
+
+// tweak: { "type": "font", "title": "H1 Font", "target": "h1" }
+.h1-font {
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0px;
+	font-size: 40px;
+	line-height: 40px;
+}
+
+// tweak: { "type": "color", "title": "H1 Text Color", "target": "h1" }
+@h1-text-color: #666;
+
+h1 {
+	.h1-font;
+	color: @h1-text-color;
+	margin: .8em 0;
+}
