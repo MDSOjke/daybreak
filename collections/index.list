@@ -15,6 +15,7 @@
 				<figcaption>
 					<h1>{title}</h1>
 					{description}
+					<squarespace:block-field id="index-caption-{id}" columns="1">
 				</figcaption>
 
 			</figure>

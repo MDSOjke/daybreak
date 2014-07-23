@@ -35,3 +35,50 @@ h1 {
 	color: @h1-text-color;
 	margin: .8em 0;
 }
+
+// tweak: { "type": "font", "title": "H2 Font", "target": "h2" }
+.h2-font {
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0px;
+	font-size: 36px;
+	line-height: 39px;
+}
+
+// tweak: { "type": "color", "title": "H2 Text Color", "target": "h2" }
+@h2-text-color: #666;
+
+h2 {
+	.h2-font;
+	color: @h2-text-color;
+	margin: .8em 0;
+}
+
+// tweak: { "type": "color", "title": "Link Color", "target": "a" }
+@link-color: #12CEEA;
+
+a:not(.sqs-block-button-element) {
+	color: @link-color;
+	text-decoration: none;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 6px;
+		left: 0;
+		right: 0;
+		height: 2px;
+		opacity: 0;
+		background-color: @link-color;
+		@a: .15s @easing, opacity .15s @easing;
+		.transform-transition(@a);
+	}
+
+	&:hover::before {
+		.transform(translateY(6px));
+		opacity: 1;
+	}
+}
+

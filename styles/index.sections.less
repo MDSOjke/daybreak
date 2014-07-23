@@ -1,16 +1,53 @@
 .section (@index) {
 
-	main > section:nth-child(@index) > figure {
+	main > section:nth-child(@index) {
+
 		@foreground-color: "section-@{index}-foreground-color";
+		@overlay-color: "section-@{index}-overlay-color";
 
-		&, h1, p, strong {
-			color: @@foreground-color;
-		}
+		> figure {
 
-		&::before {
-			@overlay-color: "section-@{index}-overlay-color";
-			background-color: @@overlay-color;
+			> figcaption {
+
+				:not(a) {
+					color: @@foreground-color;
+				}
+
+				.sqs-block-button .sqs-block-button-element {
+					.button-color(@@foreground-color);
+				}
+
+				.section-@{index}-caption-type-custom > & > :not(.sqs-layout) {
+					display: none;
+				}
+
+				> .sqs-layout {
+					display: none;
+
+					.section-@{index}-caption-type-custom > & {
+						display: block;
+					}
+				}
+			}
+
+			&::before {
+				background-color: @@overlay-color;
+			}
 		}
+	}
+}
+
+.button-color (@color) {
+	background-color: fade(@color, 0%);
+	color: @color;
+
+	&::before {
+		border-color: @color;
+	}
+
+	&:hover {
+		background-color: @color;
+		color: contrast(@color, @paragraph-text-color, #fff);
 	}
 }
 
@@ -21,7 +58,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 1", "target": "main > section:nth-child(1) > figure", "showOnlyWhenPresent": "main > section:nth-child(1)" }
 @section-1-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 1 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 1", "target": "main > section:nth-child(1) > figure", "showOnlyWhenPresent": "main > section:nth-child(1)" }
+// tweak: { "type": "dropdown", "title": "Section 1 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 1", "target": "main > section:nth-child(1) > figure", "showOnlyWhenPresent": "main > section:nth-child(1)" }
 
 .section(1);
 
@@ -32,7 +69,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 2", "target": "main > section:nth-child(2) > figure", "showOnlyWhenPresent": "main > section:nth-child(2)" }
 @section-2-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 2 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 2", "target": "main > section:nth-child(2) > figure", "showOnlyWhenPresent": "main > section:nth-child(2)" }
+// tweak: { "type": "dropdown", "title": "Section 2 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 2", "target": "main > section:nth-child(2) > figure", "showOnlyWhenPresent": "main > section:nth-child(2)" }
 
 .section(2);
 
@@ -43,7 +80,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 3", "target": "main > section:nth-child(3) > figure", "showOnlyWhenPresent": "main > section:nth-child(3)" }
 @section-3-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 3 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 3", "target": "main > section:nth-child(3) > figure", "showOnlyWhenPresent": "main > section:nth-child(3)" }
+// tweak: { "type": "dropdown", "title": "Section 3 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 3", "target": "main > section:nth-child(3) > figure", "showOnlyWhenPresent": "main > section:nth-child(3)" }
 
 .section(3);
 
@@ -54,7 +91,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 4", "target": "main > section:nth-child(4) > figure", "showOnlyWhenPresent": "main > section:nth-child(4)" }
 @section-4-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 4 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 4", "target": "main > section:nth-child(4) > figure", "showOnlyWhenPresent": "main > section:nth-child(4)" }
+// tweak: { "type": "dropdown", "title": "Section 4 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 4", "target": "main > section:nth-child(4) > figure", "showOnlyWhenPresent": "main > section:nth-child(4)" }
 
 .section(4);
 
@@ -65,7 +102,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 5", "target": "main > section:nth-child(5) > figure", "showOnlyWhenPresent": "main > section:nth-child(5)" }
 @section-5-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 5 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 5", "target": "main > section:nth-child(5) > figure", "showOnlyWhenPresent": "main > section:nth-child(5)" }
+// tweak: { "type": "dropdown", "title": "Section 5 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 5", "target": "main > section:nth-child(5) > figure", "showOnlyWhenPresent": "main > section:nth-child(5)" }
 
 .section(5);
 
@@ -76,7 +113,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 6", "target": "main > section:nth-child(6) > figure", "showOnlyWhenPresent": "main > section:nth-child(6)" }
 @section-6-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 6 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 6", "target": "main > section:nth-child(6) > figure", "showOnlyWhenPresent": "main > section:nth-child(6)" }
+// tweak: { "type": "dropdown", "title": "Section 6 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 6", "target": "main > section:nth-child(6) > figure", "showOnlyWhenPresent": "main > section:nth-child(6)" }
 
 .section(6);
 
@@ -87,7 +124,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 7", "target": "main > section:nth-child(7) > figure", "showOnlyWhenPresent": "main > section:nth-child(7)" }
 @section-7-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 7 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 7", "target": "main > section:nth-child(7) > figure", "showOnlyWhenPresent": "main > section:nth-child(7)" }
+// tweak: { "type": "dropdown", "title": "Section 7 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 7", "target": "main > section:nth-child(7) > figure", "showOnlyWhenPresent": "main > section:nth-child(7)" }
 
 .section(7);
 
@@ -98,7 +135,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 8", "target": "main > section:nth-child(8) > figure", "showOnlyWhenPresent": "main > section:nth-child(8)" }
 @section-8-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 8 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 8", "target": "main > section:nth-child(8) > figure", "showOnlyWhenPresent": "main > section:nth-child(8)" }
+// tweak: { "type": "dropdown", "title": "Section 8 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 8", "target": "main > section:nth-child(8) > figure", "showOnlyWhenPresent": "main > section:nth-child(8)" }
 
 .section(8);
 
@@ -109,7 +146,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 9", "target": "main > section:nth-child(9) > figure", "showOnlyWhenPresent": "main > section:nth-child(9)" }
 @section-9-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 9 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 9", "target": "main > section:nth-child(9) > figure", "showOnlyWhenPresent": "main > section:nth-child(9)" }
+// tweak: { "type": "dropdown", "title": "Section 9 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 9", "target": "main > section:nth-child(9) > figure", "showOnlyWhenPresent": "main > section:nth-child(9)" }
 
 .section(9);
 
@@ -120,7 +157,7 @@
 // tweak: { "type": "color", "title": "Overlay Color", "category": "Section 10", "target": "main > section:nth-child(10) > figure", "showOnlyWhenPresent": "main > section:nth-child(10)" }
 @section-10-overlay-color: rgba(68, 68, 68, .5);
 
-// tweak: { "type": "dropdown", "title": "Section 10 Content Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 10", "target": "main > section:nth-child(10) > figure", "showOnlyWhenPresent": "main > section:nth-child(10)" }
+// tweak: { "type": "dropdown", "title": "Section 10 Caption Type", "options": [ "Standard", "Custom" ], "default": "Standard", "category": "Section 10", "target": "main > section:nth-child(10) > figure", "showOnlyWhenPresent": "main > section:nth-child(10)" }
 
 .section(10);
 
