@@ -26,23 +26,23 @@
 			.transition(@a) !important;
 
 			&::before {
-				margin: 0;
-				@a: margin .15s @easing;
-				.transition(@a);
+				margin: 0 -12px -12px 0;
+				.transform(translate(-6px, -6px));
+				@a: .15s @easing, margin .15s @easing;
+				.transform-transition(@a);
 			}
 		}
 
 		&::before {
 			content: "";
 			position: absolute;
-			top: -6px;
-			left: -6px;
-			right: -6px;
-			bottom: -6px;
-			margin: 6px;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			border: 3px solid @paragraph-text-color;
-			@a: margin .15s @easing .05s;
-			.transition(@a);
+			@a: .15s @easing .05s, margin .15s @easing .05s;
+			.transform-transition(@a);
 		}
 
 		&.sqs-block-button-element--medium {
