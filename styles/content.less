@@ -25,15 +25,21 @@
 			@a: background-color .15s @easing .05, color .15s @easing .05;
 			.transition(@a) !important;
 
-			&::before {
-				margin: 0 -12px -12px 0;
-				.transform(translate(-6px, -6px));
-				@a: .15s @easing, margin .15s @easing;
+			&::before, &::after {
+				@a: .15s @easing;
 				.transform-transition(@a);
+			}
+
+			&::before {
+				.transform(translate(-6px, -6px));
+			}
+
+			&::after {
+				.transform(translate(6px, 6px));
 			}
 		}
 
-		&::before {
+		&::before, &::after {
 			content: "";
 			position: absolute;
 			top: 0;
@@ -41,8 +47,18 @@
 			right: 0;
 			bottom: 0;
 			border: 3px solid @paragraph-text-color;
-			@a: .15s @easing .05s, margin .15s @easing .05s;
+			@a: .15s @easing .05s;
 			.transform-transition(@a);
+		}
+
+		&::before {
+			border-right-color: transparent;
+			border-bottom-color: transparent;
+		}
+
+		&::after {
+			border-left-color: transparent;
+			border-top-color: transparent;
 		}
 
 		&.sqs-block-button-element--medium {

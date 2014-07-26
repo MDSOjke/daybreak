@@ -42,7 +42,13 @@
 	color: @color;
 
 	&::before {
-		border-color: @color;
+		border-top-color: @color;
+		border-left-color: @color;
+	}
+
+	&::after {
+		border-right-color: @color;
+		border-bottom-color: @color;
 	}
 
 	&:hover {
