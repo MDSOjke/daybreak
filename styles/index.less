@@ -1,3 +1,17 @@
+// tweak: { "type": "font", "title": "Site Title Font", "target": "main > section:first-child" }
+.site-title-font {
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 1em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+// tweak: { "type": "color", "title": "Site Title Color", "target": "main > section:first-child" }
+@site-title-color: #444;
+
 html, body {
 	height: 100%;
 }
@@ -8,6 +22,10 @@ main {
 	> section {
 		height: 100%;
 		position: relative;
+
+		> a {
+			display: none;
+		}
 
 		> figure {
 			position: fixed;
@@ -68,6 +86,33 @@ main {
 				max-width: 600px;
 				margin: 0 auto;
 				.transform(translateY(-50%));
+			}
+		}
+
+		&:first-child > div {
+
+			&::before {
+				content: attr(data-website-title);
+				position: absolute;
+				top: 2%;
+				left: 0;
+				right: 0;
+				.site-title-font;
+				color: @site-title-color;
+				margin-top: 4%;
+				text-align: center;
+			}
+
+			&::after {
+				content: "";
+				background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1OSAyMyI+PHBhdGggZmlsbD0iIzQ0NDQ0NCIgZD0iTTYzOS41LDE0OTggTDYxMCwxNDc4LjAxMzMxIEw2MTEuOTc3OTUyLDE0NzUgTDYzOS41LDE0OTMuNjQ2NjQgTDY2Ny4wMjIwNDgsMTQ3NSBMNjY5LDE0NzguMDEzMzEgTDYzOS41LDE0OTgiLz48L3N2Zz4=");
+				position: absolute;
+				bottom: 2%;
+				left: 0;
+				right: 0;
+				margin: 0 auto 4%;
+				width: 30px;
+				height: 12px;
 			}
 		}
 

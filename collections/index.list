@@ -4,6 +4,8 @@
 
 		<section>
 
+			<a name="{urlId}"></a>
+
 			<figure>
 
 				{.section mainImage}
@@ -20,7 +22,7 @@
 
 			</figure>
 
-			<div>
+			<div data-website-title="{website.siteTitle}">
 
 				{mainContent}
 
